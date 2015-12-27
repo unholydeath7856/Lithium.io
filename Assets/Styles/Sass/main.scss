@@ -1,0 +1,13 @@
+//naturalize body and html
+html, body {
+  margin:0;
+  height: 0;
+}
+
+//1-tools
+@import "1-tools/variables.scss";
+@import "1-tools/mixins.scss";
+//2-sections
+@import "2-sections/header.scss";
+//3-modueles
+@import "3-modueles/slider.scss";
