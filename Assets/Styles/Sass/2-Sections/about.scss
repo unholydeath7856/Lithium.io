@@ -1,0 +1,24 @@
+.about {
+  color:$dark;
+  width:80%;
+  margin-top:50px;
+  margin-left: 10%;
+  margin-right: 10%;
+  transform: rotateY(180deg);
+  background-color:rgba($light, 0.75);
+  .container {
+    font-family: $font-family;
+    display: none;
+    .section-header {
+      text-align: center;
+      padding:15px;
+      text-decoration: underline;
+    }
+    .about-text {
+      text-align: center;
+      margin-right: 10%;
+      margin-left: 10%;
+      padding-bottom: 25px;
+    }
+  }
+}

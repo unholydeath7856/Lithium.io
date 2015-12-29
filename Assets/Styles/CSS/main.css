@@ -1,15 +1,26 @@
 html, body {
   margin: 0;
+  background-color: #e3e3e3;
   height: 0; }
+
+.col-1 {
+  width: 50%;
+  display: block;
+  float: left; }
+
+.col-2 {
+  width: 50%;
+  display: block;
+  float: right; }
 
 .header {
   background-attachment: fixed;
-  padding: 0;
   margin: 0;
-  height: 650px;
+  height: 700px;
   font-family: "Cantarell";
   width: 100%; }
   .header .container {
+    height: 650px;
     width: inherit; }
     .header .container .logo {
       float: right;
@@ -25,7 +36,7 @@ html, body {
         -ms-border-radius: 50px;
         border-radius: 50px;
         text-align: center;
-        color: #DE2822;
+        color: #57A3C4;
         width: 50%;
         margin: 0 auto;
         text-transform: uppercase; }
@@ -38,7 +49,101 @@ html, body {
         border-radius: 50px;
         background-color: rgba(0, 0, 0, 0.5);
         width: 40%;
-        color: #DE2822;
+        color: #57A3C4;
         text-align: center; }
+
+.about {
+  color: #785429;
+  width: 80%;
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+  transform: rotateY(180deg);
+  background-color: rgba(87, 163, 196, 0.75); }
+  .about .container {
+    font-family: "Cantarell";
+    display: none; }
+    .about .container .section-header {
+      text-align: center;
+      padding: 15px;
+      text-decoration: underline; }
+    .about .container .about-text {
+      text-align: center;
+      margin-right: 10%;
+      margin-left: 10%;
+      padding-bottom: 25px; }
+
+.submit {
+  width: 80%;
+  margin: 50px 10% 15px;
+  transform: rotateY(180deg);
+  background-color: rgba(206, 112, 126, 0.75); }
+  .submit .container {
+    padding-bottom: 10px;
+    color: #785429;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+    font-family: "Cantarell"; }
+    .submit .container .section-header {
+      text-align: center;
+      padding: 15px;
+      text-decoration: underline; }
+    .submit .container .image-submit {
+      text-align: center; }
+      .submit .container .image-submit .custom-upload {
+        background-image: url("../../Images/uploadfile-icon.png");
+        color: white;
+        background-color: #785429;
+        padding: 5px 25px;
+        border: 1px white solid;
+        background-repeat: no-repeat;
+        background-position: 5px 8px;
+        text-align: right; }
+        .submit .container .image-submit .custom-upload:hover {
+          cursor: pointer;
+          color: #CE707E;
+          background-repeat: no-repeat;
+          background-position: 5px 8px;
+          background-image: url("../../Images/uploadfile-icon-hover.png"); }
+      .submit .container .image-submit #file-submit {
+        display: none; }
+      .submit .container .image-submit .placeholder-img {
+        max-height: 150px;
+        max-width: 150px; }
+      .submit .container .image-submit .file-name {
+        padding: 15px; }
+      .submit .container .image-submit .send {
+        color: white;
+        background-color: #785429;
+        padding: 3px 25px;
+        border: 1px white solid;
+        font-size: 16px;
+        font-family: "Cantarell"; }
+        .submit .container .image-submit .send:hover {
+          color: #CE707E;
+          cursor: pointer; }
+
+.result {
+  color: #785429;
+  width: 80%;
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+  transform: rotateY(180deg);
+  background: #CFC543; }
+  .result .container {
+    font-family: "Cantarell";
+    display: none; }
+    .result .container .section-header {
+      text-align: center;
+      padding: 15px;
+      text-decoration: underline; }
+    .result .container .original .original-image {
+      display: none;
+      display: block;
+      margin: 0 auto;
+      max-width: 80%;
+      max-height: 300px; }
 
 /*# sourceMappingURL=main.css.map */

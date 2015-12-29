@@ -1,7 +1,19 @@
 //naturalize body and html
 html, body {
   margin:0;
+  background-color:#e3e3e3;
   height: 0;
+}
+
+.col-1 {
+  width: 50%;
+  display: block;
+  float:left;
+}
+.col-2 {
+  width: 50%;
+  display: block;
+  float:right;
 }
 
 //1-tools
@@ -9,5 +21,8 @@ html, body {
 @import "1-tools/mixins.scss";
 //2-sections
 @import "2-sections/header.scss";
+@import "2-sections/about.scss";
+@import "2-sections/submit.scss";
+@import "2-sections/result.scss";
 //3-modueles
 @import "3-modueles/slider.scss";
