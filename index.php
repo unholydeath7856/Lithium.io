@@ -1,14 +1,35 @@
 <?php
 $file_name = "No File Choosen";
 $imagePath = "Assets/Images/placeholder.jpg";
+$grayscalePath = "Assets/Images/placeholder.jpg";
 if(isset($_FILES['image'])) {
-  //if ((@$_FILES['image']['type']) == 'image/jpg' || (@$_FILES['image']['type']) == 'image/png') {
+  if ($_FILES['image']['type'] == 'image/jpeg' || $_FILES['image']['type'] == 'image/png' || $_FILES['image']['type'] == 'image/gif') {
     $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     $dir_name = substr(str_shuffle($chars),0,15);
     mkdir("Assets/Images/toGreyscale/$dir_name/");
     move_uploaded_file($_FILES['image']['tmp_name'], "Assets/Images/toGreyscale/$dir_name/".$_FILES['image']['name']);
+
     $imagePath = "Assets/Images/toGreyscale/$dir_name/".$_FILES['image']['name'];
-  //}
+    if ($_FILES['image']['type'] == 'image/jpeg') {
+      $im = imagecreatefromjpeg($imagePath);
+      imagefilter($im, IMG_FILTER_GRAYSCALE);
+      imagejpeg($im, "Assets/Images/toGreyscale/$dir_name/grayscale.jpg");
+      $grayscalePath = "Assets/Images/toGreyscale/$dir_name/grayscale.jpg";
+    }
+    if ($_FILES['image']['type'] == 'image/png') {
+      $im = imagecreatefrompng($imagePath);
+      imagefilter($im, IMG_FILTER_GRAYSCALE);
+      imagepng($im, "Assets/Images/toGreyscale/$dir_name/grayscale.png");
+      $grayscalePath = "Assets/Images/toGreyscale/$dir_name/grayscale.png";
+    }
+    if ($_FILES['image']['type'] == 'image/gif') {
+      $im = imagecreatefromgif($imagePath);
+      imagefilter($im, IMG_FILTER_GRAYSCALE);
+      imagegif($im, "Assets/Images/toGreyscale/$dir_name/grayscale.gif");
+      $grayscalePath = "Assets/Images/toGreyscale/$dir_name/grayscale.gif";
+    }
+
+  }
 }
  ?>
 <!DOCTYPE html>
@@ -62,10 +83,12 @@ if(isset($_FILES['image'])) {
         <div class="container">
           <h3 class="section-header">Result</h3>
           <div class="original">
-            <img class="original-image" src=<?php if ($imagePath != "") { print($imagePath); }  ?> onload="grayScaleImage(this,true);" alt="placement img" />
+            <h4 class="image-header">Original</h4>
+            <img class="original-image" src=<?php if ($imagePath != "") { print($imagePath); }  ?> alt="placement img" />
           </div>
-          <div class="result">
-            <canvas id="greyscale" width="300" height="300"></canvas>
+          <div class="result-div">
+            <h4 class="image-header">Result</h4>
+            <img class="result-image" src=<?php print($grayscalePath); ?> alt="loading" />
           </div>
         </div>
       </section>

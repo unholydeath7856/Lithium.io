@@ -67,35 +67,3 @@ function previewImage (input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
-
-function grayScaleImage (image, bPlaceImage) {
-  var myCanvas = document.getElementById('greyscale');
-  var myCanvasContext = myCanvas.getContext("2d");
-  var imageWidth = image.width;
-  var imageHeight = image.height;
-
-  myCanvas.width = image.width;
-  myCanvas.height = image.height;
-  myCanvasContext.drawImage(image,0,0);
-
-  var imageData = myCanvasContext.getImageData(0,0,imageWidth,imageHeight);
-
-  for (var j = 0; j < imageData.height; j++) {
-    for (var i = 0; i < imageData.width; i++) {
-      var index = (i*4) * imageData.width + (j*4);
-      var red = imageData.data[index];
-      var green = imageData.data[index+1];
-      var blue = imageData.data[index+2];
-      var alpha = imageData.data[index+3];
-      var average = (red+green+blue)/3;
-      imageData.data[index] = average;
-      imageData.data[index+1] = average;
-      imageData.data[index+2] = average;
-      imageData.data[index+3] = alpha;
-    }
-  }
-  if (bPlaceImage) {
-    
-  }
-  return myCanvas.toDataURL();
-}

@@ -16,6 +16,17 @@ html, body {
   float:right;
 }
 
+@media screen and (max-width:770px) {
+  .col-1 {
+    display: inline-block;
+    width: 100%;
+  }
+  .col-2 {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
 //1-tools
 @import "1-tools/variables.scss";
 @import "1-tools/mixins.scss";

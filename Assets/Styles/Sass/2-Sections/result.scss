@@ -4,6 +4,7 @@
   margin-top:50px;
   margin-left: 10%;
   margin-right: 10%;
+  padding-bottom: 25px;
   transform: rotateY(180deg);
   background: #CFC543;
   .container {
@@ -15,12 +16,62 @@
       text-decoration: underline;
     }
     .original {
+      width: 100%;
+      display: block;
+      .image-header {
+        text-align: center;
+        padding:15px;
+      }
       .original-image {
         display: none;
         display: block;
         margin: 0 auto;
         max-width:80%;
         max-height: 300px;
+      }
+    }
+    .result-div {
+      width: 100%;
+      display: block;
+      .image-header {
+        text-align: center;
+        padding:15px;
+      }
+      .result-image {
+        display: block;
+        margin: 0 auto;
+        max-width: 80%;
+        max-height:300px;
+      }
+    }
+  }
+  @media screen and (max-width:770px) {
+    .container {
+      display: inline-block;
+      margin-bottom:250px;
+      padding-bottom: 15px;
+      .original {
+        width: 50%;
+        float:left;
+      }
+      .result-div {
+        width:50%;
+        float:right;
+      }
+    }
+  }
+  @media screen and (max-width:570px) {
+    .container {
+      display: block;
+      margin-bottom: 0;
+      padding-bottom: 15px;
+      .original {
+        width: 100%;
+        float:none;
+      }
+      .result-div {
+        width:100%;
+        float: none;
       }
     }
   }
